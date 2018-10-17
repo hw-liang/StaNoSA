@@ -18,7 +18,7 @@ Note: if you experience anything like "conda: command not found" then just resta
 
 
 ## Training
-Configuration is done in "configuration/stanosa.conf".
+Configuration is done in "stanosa.conf".
 
 Ensure that your training images are all stored directory under the folder specified in the *data_path* variable in the stanosa.conf file.
 
