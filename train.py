@@ -149,7 +149,6 @@ for epoch in range(config.getint("training", "epochs")):
         batch_count += 1
 
     # end of epoch
-
     # save state
     torch.save(encoder.state_dict(), "{}/encoder_{}.pth".format(state_path,epoch))
     torch.save(decoder.state_dict(), "{}/decoder_{}.pth".format(state_path,epoch))
