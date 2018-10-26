@@ -157,5 +157,5 @@ for num, fn in enumerate(os.listdir(data_path)):
     labels = kmeans.predict(image_activations_np)
     label_path = "{}/{}_labels.npy".format(output_path,fn.split(".")[0])
     np.save(label_path, labels)
-    if num%500 == 0:
+    if num % 500 == 0:
         print("Have finished processing {} images".format(num))
