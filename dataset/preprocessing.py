@@ -1,7 +1,7 @@
 import numpy as np
 
-
 # https://stackoverflow.com/questions/31528800/how-to-implement-zca-whitening-python
+
 def get_zca_matrix(X):
 
     """

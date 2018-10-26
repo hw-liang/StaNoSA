@@ -10,14 +10,13 @@ from torchvision import transforms
 from .preprocessing import get_zca_matrix
 
 def calculate_crops(img, image_id, patch_size, stride):
-
+    # define crop windows
     width, height = img.size
     crops = []
     for w in range(0, width-patch_size+1, stride):
         for h in range(0, height-patch_size+1, stride):
             box = (w, h, w + patch_size, h + patch_size)
             crops.append((image_id, box))
-
     return crops
 
 
@@ -29,7 +28,6 @@ class Patchifier(Dataset):
         self.patch_size = patch_size
         self.stride = patch_size if stride == -1 else stride
         self.sample_rate = sample_rate
-
 
         # load in the images
         if os.path.isdir(path_to_images):
@@ -57,8 +55,6 @@ class Patchifier(Dataset):
                 item["tf"] = transforms.Compose(tfs)
 
                 self.images.append(item)
-            #    Image.open(os.path.join(path_to_images, fn)) for fn in os.listdir(path_to_images)
-            #}]
         else:
             # single image
             img = Image.open(path_to_images)
@@ -121,5 +117,4 @@ class Patchifier(Dataset):
         image_id, box = self.all_crops[index]
         image_item = self.images[image_id]
         patch = image_item["img"].crop(box)
-
         return image_item["tf"](patch).float()
