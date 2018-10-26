@@ -3,7 +3,6 @@ from torch import nn
 from torch.nn import functional as F
 
 
-
 class NeuralNet(nn.Module):
 
     def __init__(self, input_size, h1, output_size, activation=nn.ReLU, activate_last=True):
