@@ -1,5 +1,5 @@
 # StaNoSA
-Stain Normalisation using Sparse Auto-Encoders.
+[Stain Normalisation using Sparse Auto-Encoders](https://www.sciencedirect.com/science/article/abs/pii/S0895611116300404).
 Implemented as close to the paper as possible.
 
 # Environment Setup
